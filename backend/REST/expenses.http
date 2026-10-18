@@ -1,0 +1,19 @@
+@baseUrl = http://localhost:3000/api/expenses
+
+### Get all expenses
+GET {{baseUrl}}
+
+### Add a new expense
+POST {{baseUrl}}
+Content-Type: application/json
+
+{
+  "date": "2025-10-15",
+  "description": "Team lunch",
+  "payer": "John",
+  "amount": 45.50
+}
+
+### Reset expenses
+POST {{baseUrl}}/reset
+
