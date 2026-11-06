@@ -4,7 +4,7 @@ import useExpenses from "../hooks/useExpenses";
 import type { Expense } from "../types/Expense";
 
 const Home = () => {
-  const {expenses, addExpense, resetExpenses, loading, error} = useExpenses();
+  let {expenses, addExpense, resetExpenses, loading, error} = useExpenses();
 
   function handleAddExpense(): void {
     const nextId = (
@@ -30,6 +30,10 @@ const Home = () => {
     return (<p>Loading</p>)
   }
 
+  if (!Array.isArray(expenses)) {
+    expenses = [];
+  }
+  
   return (
     <>
       {loading && <h1>Loading...</h1>}
