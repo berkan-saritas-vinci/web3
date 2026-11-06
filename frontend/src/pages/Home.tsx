@@ -25,6 +25,7 @@ const Home = () => {
     addExpense(newExpense);
   }
 
+  console.log(expenses)
   if(expenses == null){
     return (<p>Loading</p>)
   }
