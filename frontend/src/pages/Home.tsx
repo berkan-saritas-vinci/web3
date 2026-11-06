@@ -25,6 +25,10 @@ const Home = () => {
     addExpense(newExpense);
   }
 
+  if(expenses == null){
+    return (<p>Loading</p>)
+  }
+
   return (
     <>
       {loading && <h1>Loading...</h1>}
